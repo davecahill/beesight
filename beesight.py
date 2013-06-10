@@ -1,4 +1,5 @@
 import ConfigParser
+import datetime
 
 # complain on config file issues
 
@@ -15,12 +16,24 @@ def get_insight():
         print username
         print password
 
-def csv_to_values():
-    pass
+def csv_to_one_per_day(csv_lines):
 
-def cap_one_per_day():
-    pass
+    s = {}
 
+    # skip first two header lines
+    for l in csv_lines[2:]:
+        datetime_part = l.split(",")[0]
+        date_part = datetime_part.split(" ")[0]
+        m, d, y = map(int, date_part.split("/"))
+        dt = datetime.date(y, m, d)
+
+        if not dt in s:
+            s[dt] = 0
+
+    return sorted(s.keys())
 
 if __name__ == "__main__":
-    get_insight()
+    #get_insight()
+
+    f = open("sample_data.csv")
+    csv_to_one_per_day(f.readlines())
