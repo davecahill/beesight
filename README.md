@@ -1,3 +1,11 @@
+beesight.py
+-------------
+This is a small script which retrieves meditation data from insighttimer.com and posts the data points to your beeminder goal, so that you can easily track how often you're meditating.
+
+beesight.py only counts 1 point per day (meditated or not), as my aim is to track frequency rather than overall minutes.
+
+It is intended to be run on a cron, picking up new datapoints and posting them to beeminder.
+
 Usage
 ---------
 
@@ -10,8 +18,6 @@ To run:
 ```
 python beeminder.py
 ```
-
-I set this up on a cron so that it runs occasionally, and posts new datapoints to beeminder if there are any.
 
 Notes
 ------
