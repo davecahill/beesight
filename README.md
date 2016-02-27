@@ -19,6 +19,13 @@ To run:
 python beesight.py
 ```
 
+If you see the message "ImportError: no module named requests", you'll need to install the python [requests](http://docs.python-requests.org/en/master/) library by running:
+```
+pip install requests
+```
+If you hit any issues installing requests, further instructions are here:
+http://docs.python-requests.org/en/master/user/install/
+
 Notes
 ------
 beesight.py currently subtracts one from the dates it gets from beeminder,
