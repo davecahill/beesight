@@ -16,7 +16,7 @@ https://www.beeminder.com/api/v1/auth_token.json
 
 To run:
 ```
-python beeminder.py
+python beesight.py
 ```
 
 Notes
